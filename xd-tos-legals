@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XD Bot — Legal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0d0d14;
+      --surface: #13131f;
+      --border: #2a2a40;
+      --accent: #c8a84b;
+      --accent-dim: rgba(200,168,75,0.12);
+      --text: #e8e8f0;
+      --muted: #7a7a9a;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* top bar */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,20,0.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    header .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+    header .sep { color: var(--border); }
+    header nav { display: flex; gap: 1.5rem; margin-left: auto; }
+    header nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    header nav a:hover { color: var(--accent); }
+
+    /* tabs */
+    .tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+      max-width: 780px;
+      margin: 2.5rem auto 0;
+      padding: 0 2rem;
+    }
+    .tab {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      color: var(--muted);
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+    .tab:hover:not(.active) { color: var(--text); }
+
+    /* content */
+    main {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .page { display: none; }
+    .page.active { display: block; }
+
+    .page-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-header .eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .page-header h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .page-header .meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    section h2::before {
+      content: '';
+      display: inline-block;
+      width: 3px;
+      height: 0.9rem;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    section p {
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+    section ul {
+      list-style: none;
+      padding: 0;
+    }
+    section ul li {
+      font-size: 0.9rem;
+      color: var(--text);
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+    }
+    section ul li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      font-size: 0.45rem;
+      color: var(--accent);
+      top: 0.55rem;
+    }
+
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid rgba(200,168,75,0.25);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      font-size: 0.88rem;
+      color: var(--text);
+      margin: 1.5rem 0;
+    }
+    .callout a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .callout a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="logo">✦ XD Bot</span>
+  <span class="sep">|</span>
+  <span style="font-size:0.82rem;color:var(--muted);">Legal Documents</span>
+  <nav>
+    <a href="https://discord.gg/Gz3dEH9VpJ" target="_blank">Support Server</a>
+    <a href="https://top.gg/bot/1305780094937337906/vote" target="_blank">Vote</a>
+  </nav>
+</header>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('tos')">Terms of Service</div>
+  <div class="tab" onclick="switchTab('privacy')">Privacy Policy</div>
+</div>
+
+<main>
+
+  <!-- TERMS OF SERVICE -->
+  <div class="page active" id="tos">
+    <div class="page-header">
+      <div class="eyebrow">XD Bot</div>
+      <h1>Terms of Service</h1>
+      <div class="meta">Effective date: June 10, 2026 &nbsp;·&nbsp; Last updated: June 10, 2026</div>
+    </div>
+
+    <section>
+      <h2>Acceptance</h2>
+      <p>By using XD Bot ("the Bot") in any Discord server or direct message, you agree to these Terms of Service. If you do not agree, do not use the Bot.</p>
+    </section>
+
+    <section>
+      <h2>Eligibility</h2>
+      <p>You must comply with Discord's <a href="https://discord.com/terms" target="_blank" style="color:var(--accent)">Terms of Service</a> and be of the minimum age required in your country to use Discord. Use of the Bot by anyone who does not meet these requirements is not permitted.</p>
+    </section>
+
+    <section>
+      <h2>Permitted Use</h2>
+      <p>You may use the Bot for its intended features: gacha pulls, leveling, social commands, giveaways, and server utilities. You agree not to:</p>
+      <ul>
+        <li>Exploit bugs or glitches to gain unfair advantages</li>
+        <li>Use automated tools, macros, or bots to interact with the Bot</li>
+        <li>Attempt to reverse-engineer, copy, or redistribute the Bot's code</li>
+        <li>Use the Bot to harass, abuse, or harm other users</li>
+        <li>Attempt to manipulate or corrupt Bot data belonging to other users</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Virtual Items</h2>
+      <p>All in-bot currency (Primogems), characters, and items are virtual goods with no real-world monetary value. They cannot be transferred outside the Bot, sold for real money, or exchanged for any goods or services.</p>
+    </section>
+
+    <section>
+      <h2>Service Availability</h2>
+      <p>XD Bot is provided as-is and may be unavailable at any time for maintenance or other reasons. We reserve the right to modify, suspend, or discontinue any feature without prior notice.</p>
+    </section>
+
+    <section>
+      <h2>Account Actions</h2>
+      <p>We reserve the right to reset, suspend, or permanently ban any user's Bot data for violations of these terms, abuse, or at our sole discretion.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="callout">
+        For questions or concerns regarding these Terms, contact <strong>notcassal</strong> on Discord or join the support server: <a href="https://discord.gg/Gz3dEH9VpJ" target="_blank">discord.gg/Gz3dEH9VpJ</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="page" id="privacy">
+    <div class="page-header">
+      <div class="eyebrow">XD Bot</div>
+      <h1>Privacy Policy</h1>
+      <div class="meta">Effective date: June 10, 2026 &nbsp;·&nbsp; Last updated: June 10, 2026</div>
+    </div>
+
+    <section>
+      <h2>Overview</h2>
+      <p>XD Bot is a Discord bot developed and maintained by <strong>notcassal</strong>. This policy explains what data we collect, how it is used, and your rights regarding that data.</p>
+    </section>
+
+    <section>
+      <h2>Data We Collect</h2>
+      <p>When you interact with XD Bot, the following data is stored:</p>
+      <ul>
+        <li>Discord User ID and username</li>
+        <li>In-bot currency balance (Primogems)</li>
+        <li>Gacha character collection</li>
+        <li>Experience points (XP) and level</li>
+        <li>Marriage status (Discord User ID of partner)</li>
+        <li>Daily claim and vote timestamps</li>
+        <li>Achievement progress</li>
+        <li>AFK status and reason (temporary, in-memory only)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Server Data</h2>
+      <p>For servers that use XD Bot's configuration features, we store:</p>
+      <ul>
+        <li>Discord Guild (Server) ID</li>
+        <li>Level-up announcement channel ID (if configured)</li>
+        <li>Invite tracking channel ID (if configured)</li>
+        <li>Invite usage records for invite tracking</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How We Use Your Data</h2>
+      <p>All collected data is used exclusively to operate the Bot's features. We do not:</p>
+      <ul>
+        <li>Sell or share your data with third parties</li>
+        <li>Use your data for advertising or marketing</li>
+        <li>Store message content</li>
+        <li>Track your activity outside of Bot interactions</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Storage</h2>
+      <p>Data is stored securely on MongoDB Atlas. Access is restricted to the Bot's operator (notcassal). We take reasonable precautions to protect stored data but cannot guarantee absolute security.</p>
+    </section>
+
+    <section>
+      <h2>Data Retention & Deletion</h2>
+      <p>Your data is retained for as long as you use the Bot. You may request deletion of your data at any time by contacting us. Upon a valid deletion request, all personally identifiable data associated with your Discord User ID will be removed within a reasonable timeframe.</p>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <p>XD Bot interacts with the following external services:</p>
+      <ul>
+        <li><strong>Top.gg</strong> — for vote tracking (governed by Top.gg's own privacy policy)</li>
+        <li><strong>nekos.best / otakugifs.xyz</strong> — for social action GIFs (no user data is sent)</li>
+        <li><strong>meme-api.com</strong> — for meme content (no user data is sent)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact & Data Requests</h2>
+      <div class="callout">
+        To request data deletion or ask about your data, contact <strong>notcassal</strong> on Discord or join the support server: <a href="https://discord.gg/Gz3dEH9VpJ" target="_blank">discord.gg/Gz3dEH9VpJ</a>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 XD Bot by <a href="https://discord.gg/Gz3dEH9VpJ" target="_blank">notcassal</a> &nbsp;·&nbsp;
+  <span style="cursor:pointer;color:var(--muted)" onclick="switchTab('tos')">Terms of Service</span> &nbsp;·&nbsp;
+  <span style="cursor:pointer;color:var(--muted)" onclick="switchTab('privacy')">Privacy Policy</span>
+</footer>
+
+<script>
+  function switchTab(id) {
+    document.querySelectorAll('.tab').forEach((t, i) => {
+      t.classList.toggle('active', ['tos','privacy'][i] === id);
+    });
+    document.querySelectorAll('.page').forEach(p => {
+      p.classList.toggle('active', p.id === id);
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
